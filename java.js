@@ -1,7 +1,5 @@
 const apikey = "18675a30b7714c94ba3a3072c49e9a94";
 const url = "https://newsapi.org/v2/everything?q=";
-const corsProxy = "https://your-heroku-app.herokuapp.com/";
-
 let count = 0;
 
 window.addEventListener("load", () => {
@@ -11,7 +9,7 @@ window.addEventListener("load", () => {
 
 async function fetchapi(query) {
     try {
-        const response = await fetch(`${corsProxy}${url}${query}&apiKey=${apikey}`);
+        const response = await fetch(`${url}${query}&apiKey=${apikey}`);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
